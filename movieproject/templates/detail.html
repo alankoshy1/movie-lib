@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container" style="background-color: #04356A; padding:100px 140px;">
+    <div class="row">
+        <div class="col-md-6 p-2"  style="background-color: #F1F2F4;">
+            <img src="{{move.img.url}}" width="250" height="300">
+        </div>
+
+        <div class="col-md-6 p-4" style="background-color: #5079F2; text-align: center; ">
+        <div class="p-2 my-4 m" style="background-color: #0E263E; border-radius: 10px">
+        <h5>Movie Description</h5>
+        <h3>{{move.name}}</h3>
+        <h6>{{move.desc}}</h6>
+        <h6>{{move.year}}</h6>
+        <a class="btn btn-dark" href="{% url 'movieapp:update' move.id %}">Update</a>
+        <a class="btn btn-danger" href="{% url 'movieapp:delete' move.id %}">Delete</a>
+        </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
